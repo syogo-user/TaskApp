@@ -14,7 +14,9 @@ class InputViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
+    @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+
     
     let realm = try! Realm()
     var task :Task!
@@ -28,6 +30,7 @@ class InputViewController: UIViewController {
         
         titleTextField.text = task.title
         contentsTextView.text = task.contents
+        categoryTextField.text = task.category
         datePicker.date = task.date
     }
 
@@ -35,18 +38,28 @@ class InputViewController: UIViewController {
         //キーボードをとじる
         view.endEditing(true)
     }
-    //遷移時に画面が非表示になるときに呼ばれるメソッド
-    override func viewWillDisappear(_ animated: Bool) {
+    //SAVEボタンをクリックした時
+    @IBAction func saveButtunClicked(_ sender: Any) {
         try! realm.write{
             self.task.title = self.titleTextField.text!
             self.task.contents = self.contentsTextView.text
+            self.task.category = self.categoryTextField.text!
             self.task.date = self.datePicker.date
+            
             self.realm.add(self.task,update: .modified)
         }
         setNotification(task:task)
-        
+        //ダイアログ表示
+        let dialog = UIAlertController(title: "保存しました！", message: nil, preferredStyle: .alert)
+        dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(dialog, animated: true, completion: nil)
+    }
+    //遷移時に画面が非表示になるときに呼ばれるメソッド
+    override func viewWillDisappear(_ animated: Bool) { 
         super.viewWillDisappear(animated)
     }
+    
+    
     
     func setNotification(task:Task) {
         let content = UNMutableNotificationContent()
