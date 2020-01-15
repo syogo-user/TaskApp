@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import UserNotifications
+import IBAnimatable
 
 class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
 
@@ -80,7 +81,7 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
     //各セルの内容を返すメソッド
     func tableView(_ tableView : UITableView,cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         //再利用可能なcellを得る
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell1
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! AnimatableTableViewCell
         //Cell に値を設定する
         let task = taskArray[indexPath.row]
         //cell.textLabel?.text = task.title

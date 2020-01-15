@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="Rl7-wq-U4c" customClass="TableViewCell1" customModule="taskapp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="Rl7-wq-U4c" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rl7-wq-U4c" id="A41-0n-s7p">
@@ -74,9 +74,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="category" destination="gbF-8e-laL" id="NQp-k2-het"/>
-                                            <outlet property="subtitle" destination="D5S-51-VUb" id="vCr-t2-aSZ"/>
-                                            <outlet property="title" destination="hPM-uu-gkw" id="bRL-RB-A0H"/>
+                                            <outlet property="category" destination="gbF-8e-laL" id="voP-vh-4yy"/>
+                                            <outlet property="subtitle" destination="D5S-51-VUb" id="GhL-Ea-zkK"/>
+                                            <outlet property="title" destination="hPM-uu-gkw" id="euh-OE-5eX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
