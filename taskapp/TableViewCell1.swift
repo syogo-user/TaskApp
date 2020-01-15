@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import IBAnimatable
 
-class TableViewCell1 :UITableViewCell{
+class TableViewCell1 :AnimatableTableViewCell {
     @IBOutlet weak var title : UILabel!
     @IBOutlet weak var subtitle : UILabel!
     @IBOutlet weak var category : UILabel!
